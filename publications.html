@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications — Shalini Ahuja</title>
+<meta name="description" content="Peer-reviewed publications by Dr. Shalini Ahuja, Senior Lecturer in Rehabilitation Systems and Implementation Science, King's College London.">
+
+<!-- Google tag (gtag.js) — only loaded after cookie consent is given, see script at bottom of page -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  function loadAnalytics(){
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-6V4Q93ET3P';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-6V4Q93ET3P');
+  }
+</script>
+<style>
+  :root{
+    --paper:#F7F5F0;
+    --ink:#16241F;
+    --ink-soft:#41544C;
+    --line:#CFD6CD;
+    --thread:#5B7A6C;
+    --thread-deep:#2E4A3E;
+    --clay:#B4622E;
+    --max:1180px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Fraunces', Georgia, 'Times New Roman', serif;
+    font-optical-sizing:auto;
+    letter-spacing:-0.01em;
+    color:var(--thread-deep);
+  }
+
+  a{color:inherit;}
+
+  ::selection{background:var(--thread); color:var(--paper);}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--clay);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
+
+  /* ---------- NAV ---------- */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(247,245,240,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    min-height:72px;
+    padding-top:10px; padding-bottom:10px;
+  }
+  .brand{
+    font-family:'Fraunces', Georgia, serif;
+    font-size:1.15rem;
+    font-weight:600;
+    color:var(--thread-deep);
+    text-decoration:none;
+    letter-spacing:0.01em;
+    display:inline-flex;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:0 4px;
+  }
+  .brand span{color:var(--clay);}
+  .brand-name{
+    font-size:1.75rem;
+    font-weight:700;
+    color:var(--thread-deep);
+  }
+  .brand-degrees{
+    font-size:0.98rem;
+    font-weight:600;
+    color:var(--ink-soft);
+  }
+  .degree{font-weight:700;}
+  .degree:nth-of-type(1){color:#e0473e;}
+  .degree:nth-of-type(2){color:#e8942c;}
+  .degree:nth-of-type(3){color:#2f9e5c;}
+  .degree:nth-of-type(4){color:#3b7bd6;}
+  .navlinks{display:flex; gap:2.2rem; list-style:none;}
+  .navlinks a{
+    text-decoration:none;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    position:relative;
+    padding-bottom:4px;
+  }
+  .navlinks a::after{
+    content:'';
+    position:absolute; left:0; bottom:0;
+    width:0; height:1.5px;
+    background:var(--clay);
+    transition:width .25s ease;
+  }
+  .navlinks a:hover::after, .navlinks a:focus-visible::after{width:100%;}
+  .navlinks a.current{color:var(--thread-deep); font-weight:600;}
+  .navlinks a.current::after{width:100%;}
+  .navtoggle{display:none; background:none; border:none; cursor:pointer; padding:8px;}
+  .navtoggle span, .navtoggle span::before, .navtoggle span::after{
+    content:''; display:block; width:22px; height:2px; background:var(--thread-deep);
+    position:relative; transition:.2s;
+  }
+  .navtoggle span::before{position:absolute; top:-7px;}
+  .navtoggle span::after{position:absolute; top:7px;}
+
+  /* ---------- PAGE HEADER ---------- */
+  .page-hero{
+    padding:88px 0 56px;
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.78rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--thread);
+    margin-bottom:22px;
+    font-weight:600;
+  }
+  .eyebrow::before{
+    content:''; width:24px; height:1px; background:var(--thread);
+  }
+  .page-hero h1{
+    font-size:clamp(2.1rem, 4.4vw, 3.2rem);
+    line-height:1.08;
+    max-width:20ch;
+    font-weight:500;
+  }
+  .page-hero p.lead{
+    margin-top:20px;
+    max-width:640px;
+    font-size:1.08rem;
+    color:var(--ink-soft);
+  }
+  .scholar-link{
+    display:inline-flex; align-items:center; gap:8px;
+    margin-top:28px;
+    font-size:0.92rem;
+    font-weight:600;
+    color:var(--thread-deep);
+    text-decoration:none;
+    border-bottom:1px solid var(--thread);
+    padding-bottom:2px;
+  }
+  .scholar-link:hover{color:var(--clay); border-color:var(--clay);}
+
+  /* ---------- PUBLICATIONS LIST ---------- */
+  .pubs-section{padding:24px 0 96px;}
+  .pub-filter{
+    display:flex; gap:10px; flex-wrap:wrap;
+    margin-bottom:40px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:32px;
+  }
+  .pub-filter button{
+    font-family:inherit;
+    font-size:0.86rem;
+    padding:8px 16px;
+    border-radius:20px;
+    border:1px solid var(--line);
+    background:transparent;
+    color:var(--ink-soft);
+    cursor:pointer;
+    transition:.2s;
+  }
+  .pub-filter button:hover{border-color:var(--thread);}
+  .pub-filter button.active{
+    background:var(--thread-deep);
+    border-color:var(--thread-deep);
+    color:var(--paper);
+  }
+
+  .pub-list{list-style:none;}
+  .pub-item{
+    display:grid;
+    grid-template-columns:72px 1fr auto;
+    align-items:start;
+    gap:24px;
+    padding:26px 0;
+    border-bottom:1px solid var(--line);
+    text-decoration:none;
+    color:var(--ink);
+    transition:padding-left .25s ease, background .25s ease;
+  }
+  .pub-item:hover, .pub-item:focus-visible{
+    padding-left:14px;
+    background:rgba(91,122,108,0.06);
+  }
+  .pub-year{
+    font-family:'Fraunces', Georgia, serif;
+    color:var(--thread);
+    font-size:0.95rem;
+    padding-top:2px;
+  }
+  .pub-title{
+    font-family:'Fraunces', Georgia, serif;
+    font-size:1.16rem;
+    font-weight:500;
+    color:var(--thread-deep);
+    margin-bottom:6px;
+    line-height:1.35;
+  }
+  .pub-meta{
+    color:var(--ink-soft);
+    font-size:0.92rem;
+  }
+  .pub-meta .journal{font-style:italic;}
+  .pub-arrow{
+    font-size:1.2rem;
+    color:var(--clay);
+    transition:transform .25s ease;
+    padding-top:2px;
+  }
+  .pub-item:hover .pub-arrow{transform:translate(4px,-4px);}
+
+  @media (max-width:720px){
+    .pub-item{grid-template-columns:1fr; gap:6px;}
+    .pub-arrow{display:none;}
+    .pub-year{order:-1;}
+  }
+
+  footer{
+    background:var(--ink); color:#8AA095;
+    text-align:center; font-size:0.82rem;
+    padding:24px 0;
+    border-top:1px solid rgba(247,245,240,0.1);
+  }
+
+  .cookie-banner{
+    position:fixed;
+    left:20px; right:20px; bottom:20px;
+    max-width:640px;
+    margin:0 auto;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:4px;
+    box-shadow:0 12px 32px rgba(0,0,0,0.14);
+    padding:20px 24px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:16px 20px;
+    justify-content:space-between;
+    z-index:200;
+    transform:translateY(120%);
+    opacity:0;
+    transition:transform .4s ease, opacity .4s ease;
+    pointer-events:none;
+  }
+  .cookie-banner.show{
+    transform:translateY(0);
+    opacity:1;
+    pointer-events:auto;
+  }
+  .cookie-banner p{
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    flex:1 1 260px;
+    margin:0;
+  }
+  .cookie-banner-actions{
+    display:flex; gap:10px; flex-shrink:0;
+  }
+  .btn{
+    display:inline-block;
+    padding:10px 18px;
+    border-radius:2px;
+    text-decoration:none;
+    font-size:0.86rem;
+    font-weight:600;
+    cursor:pointer;
+    border:1px solid var(--ink);
+    background:none;
+    transition:.2s;
+  }
+  .btn-primary{background:var(--thread-deep); color:var(--paper); border-color:var(--thread-deep);}
+  .btn-primary:hover{background:var(--thread);}
+  .btn-ghost{color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink); color:var(--paper);}
+  @media (max-width:480px){
+    .cookie-banner{ left:12px; right:12px; bottom:12px; padding:18px; }
+  }
+
+  @media (max-width:760px){
+    .navlinks{
+      position:fixed; inset:72px 0 auto 0;
+      background:var(--paper);
+      flex-direction:column; gap:0;
+      border-bottom:1px solid var(--line);
+      transform:translateY(-110%);
+      transition:transform .25s ease;
+    }
+    .navlinks.open{transform:translateY(0);}
+    .navlinks li{width:100%; border-top:1px solid var(--line);}
+    .navlinks a{display:block; padding:18px 32px;}
+    .navtoggle{display:block;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="wrap">
+    <a href="index.html" class="brand"><span class="brand-name">Shalini Ahuja</span><span class="brand-degrees">, <span class="degree">PhD</span>, <span class="degree">FHEA</span>, <span class="degree">MA</span>, <span class="degree">BPT</span></span></a>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#focus">Focus</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="publications.html" class="current">Publications</a></li>
+      <li><a href="index.html#coaching">Coaching</a></li>
+      <li><a href="index.html#phd">PhD</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="navtoggle" id="navtoggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="eyebrow">Publications</div>
+      <h1>Peer-reviewed work, in one place.</h1>
+      <p class="lead">A running list of journal articles, chapters, and reviews. Each title links out to the publisher's page. For the full, most current list, see my Google Scholar profile.</p>
+      <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en&inst=15159612047463182172" class="scholar-link" target="_blank" rel="noopener">View full profile on Google Scholar ↗</a>
+    </div>
+  </section>
+
+  <section class="pubs-section">
+    <div class="wrap">
+      <ul class="pub-list" id="pubList">
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2026</span>
+            <span>
+              <div class="pub-title">Group dance interventions for community dwelling older adults to prevent and treat sarcopenia: a mixed methods systematic review</div>
+              <div class="pub-meta"><span class="journal">GeroScience</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2026</span>
+            <span>
+              <div class="pub-title">Group-based interventions to reduce diabetes distress in adults with type 1 diabetes: A rapid realist review of the Reduce and TunedIn interventions</div>
+              <div class="pub-meta"><span class="journal">Diabetic Medicine</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2026</span>
+            <span>
+              <div class="pub-title">Improving maternity and neonatal care in England: protocol for a formative evaluation of the implementation of the core competency framework to enhance multi-professional practice</div>
+              <div class="pub-meta"><span class="journal">BMC Pregnancy and Childbirth</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2026</span>
+            <span>
+              <div class="pub-title">Introducing diabetes emotional wellbeing into routine consultations with adults with type 1 diabetes: a rapid realist review</div>
+              <div class="pub-meta"><span class="journal">Metabologia</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2026</span>
+            <span>
+              <div class="pub-title">What aspects of enhanced usual care for reducing diabetes distress work, for whom, in what circumstances and why? A rapid realist review</div>
+              <div class="pub-meta"><span class="journal">Diabetic Medicine</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2026</span>
+            <span>
+              <div class="pub-title">Improving maternity and neonatal care in England: a survey to evaluate the implementation of the core competency framework to improve multi-professional practice</div>
+              <div class="pub-meta"><span class="journal">BMC Health Services Research</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2026</span>
+            <span>
+              <div class="pub-title">Optimising the prevention, detection and management of diabetes distress in adults with type 1 diabetes: Feasibility study protocol (D-stress feasibility study)</div>
+              <div class="pub-meta"><span class="journal">medRxiv (preprint)</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2025</span>
+            <span>
+              <div class="pub-title">Children&#x27;s involvement in the development and evaluation of parent-focused mental health interventions: a scoping review protocol</div>
+              <div class="pub-meta"><span class="journal">JBI Evidence Synthesis</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2025</span>
+            <span>
+              <div class="pub-title">Five ways to bridge the &#x27;know-do&#x27; continuum in global health</div>
+              <div class="pub-meta"><span class="journal">Nature Human Behaviour</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2025</span>
+            <span>
+              <div class="pub-title">Information Technology for Behavioral Health: Global Perspectives on Access, Services, and Stigmatization</div>
+              <div class="pub-meta"><span class="journal">Digital Mental Health: The Future is Now (Springer Nature)</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2025</span>
+            <span>
+              <div class="pub-title">Implementation of hospital-initiated complex interventions for adult people with multiple long-term conditions: a scoping review</div>
+              <div class="pub-meta"><span class="journal">BMC Health Services Research</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2025</span>
+            <span>
+              <div class="pub-title">Integrated care for people with multimorbidity into elective surgical pathways: mixed-methods co-design study</div>
+              <div class="pub-meta"><span class="journal">British Journal of Surgery</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2025</span>
+            <span>
+              <div class="pub-title">Feasibility and acceptability of a preoperative checklist health promotion in elective surgery in the UK: a mixed-methods study protocol</div>
+              <div class="pub-meta"><span class="journal">BMJ open</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2024</span>
+            <span>
+              <div class="pub-title">Embracing change: a collective call to address multimorbidity in surgical pathways</div>
+              <div class="pub-meta"><span class="journal">Anaesthesia</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2024</span>
+            <span>
+              <div class="pub-title">Introduction to the World Psychiatric Association Digital Mental Health Special Edition: Evidence, Implementation, Guidelines, and Policy</div>
+              <div class="pub-meta"><span class="journal">Journal of Technology in Behavioral Science</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2024</span>
+            <span>
+              <div class="pub-title">Association between multimorbidity and postoperative mortality in patients undergoing major surgery: a prospective study in 29 countries across Europe</div>
+              <div class="pub-meta"><span class="journal">Anaesthesia</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2024</span>
+            <span>
+              <div class="pub-title">Impact of postoperative cardiovascular complications on 30-day mortality after major abdominal surgery: an international prospective cohort study</div>
+              <div class="pub-meta"><span class="journal">Anaesthesia</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2023</span>
+            <span>
+              <div class="pub-title">Using implementation science frameworks to explore barriers and facilitators for parents&#x27; use of therapeutic strategies following a parent-mediated autism intervention</div>
+              <div class="pub-meta"><span class="journal">Autism</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2023</span>
+            <span>
+              <div class="pub-title">What interventions should we implement in England&#x27;s mental health services? The mental health implementation network (MHIN) mixed-methods approach to rapid prioritisation</div>
+              <div class="pub-meta"><span class="journal">Frontiers in Health Services</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2023</span>
+            <span>
+              <div class="pub-title">Introduction to evidence-based digital interventions and informatics approaches to service delivery for behavioral health populations</div>
+              <div class="pub-meta"><span class="journal">Journal of Technology in Behavioral Science</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2022</span>
+            <span>
+              <div class="pub-title">Information technology and electronic health record to improve behavioral health services</div>
+              <div class="pub-meta"><span class="journal">Mental health in a digital world (Academic Press)</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2022</span>
+            <span>
+              <div class="pub-title">An evaluation of the implementation of interventions to reduce postoperative infections and optimise antibiotic use across the surgical pathway in India: a mixed-methods exploratory study protocol</div>
+              <div class="pub-meta"><span class="journal">Pilot and feasibility studies</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2022</span>
+            <span>
+              <div class="pub-title">Approaches to virtual care in underserved communities and settings: Bridging the behavioral health-care gap</div>
+              <div class="pub-meta"><span class="journal">Virtual Mental Health Care for Rural and Underserved Settings (Springer)</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2022</span>
+            <span>
+              <div class="pub-title">Scaling up of safety and quality improvement interventions in perioperative care: a systematic scoping review of implementation strategies and effectiveness</div>
+              <div class="pub-meta"><span class="journal">BMJ Global Health</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2022</span>
+            <span>
+              <div class="pub-title">Lessons from the demise of Public Health England: Where next for UK public health?</div>
+              <div class="pub-meta"><span class="journal">(commentary)</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2021</span>
+            <span>
+              <div class="pub-title">Use of feedback data to reduce surgical site infections and optimize antibiotic use in surgery: a systematic scoping review</div>
+              <div class="pub-meta"><span class="journal">Annals of surgery</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2021</span>
+            <span>
+              <div class="pub-title">Evidence for interventions to promote mental health and reduce stigma in Black faith communities: Systematic review</div>
+              <div class="pub-meta"><span class="journal">Social psychiatry and psychiatric epidemiology</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2021</span>
+            <span>
+              <div class="pub-title">Common elements of service delivery models that optimise quality of life and health service use among older people with advanced progressive conditions: a tertiary systematic review</div>
+              <div class="pub-meta"><span class="journal">BMJ Open</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2020</span>
+            <span>
+              <div class="pub-title">Evaluation of a new set of indicators for mental health care implemented in Madhya Pradesh, India: a mixed methods study</div>
+              <div class="pub-meta"><span class="journal">International journal of mental health systems</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2020</span>
+            <span>
+              <div class="pub-title">Understanding mental health system governance in India: Perspectives of key stakeholders</div>
+              <div class="pub-meta"><span class="journal">Preprints</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2020</span>
+            <span>
+              <div class="pub-title">Microaggressions towards people affected by mental health problems: a scoping review</div>
+              <div class="pub-meta"><span class="journal">Epidemiology and psychiatric sciences</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2020</span>
+            <span>
+              <div class="pub-title">Building resilient and responsive research collaborations to tackle antimicrobial resistance—lessons learnt from India, South Africa, and UK</div>
+              <div class="pub-meta"><span class="journal">International Journal of Infectious Diseases</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2019</span>
+            <span>
+              <div class="pub-title">Evaluation of performance and perceived utility of mental healthcare indicators in routine health information systems in five low-and middle-income countries</div>
+              <div class="pub-meta"><span class="journal">BJPsych Open</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2019</span>
+            <span>
+              <div class="pub-title">Integrated care for people with long-term mental and physical health conditions in low-income and middle-income countries</div>
+              <div class="pub-meta"><span class="journal">The Lancet Psychiatry</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2019</span>
+            <span>
+              <div class="pub-title">Experience of using mental health indicators in six low and middle-income countries where mental health is integrated in primary care: a qualitative study</div>
+              <div class="pub-meta"><span class="journal">BJPsych Open</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2019</span>
+            <span>
+              <div class="pub-title">Development, implementation and evaluation of mental health information systems for integrated mental health at primary care level in low-and middle-income countries</div>
+              <div class="pub-meta"><span class="journal">King&#x27;s College London (PhD Thesis)</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2018</span>
+            <span>
+              <div class="pub-title">Mental health information systems in resource-challenged countries: experiences from India</div>
+              <div class="pub-meta"><span class="journal">BJPsych international</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2018</span>
+            <span>
+              <div class="pub-title">Development of mental health indicators at the district level in Madhya Pradesh, India: mixed methods study</div>
+              <div class="pub-meta"><span class="journal">BMC health services research</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2017</span>
+            <span>
+              <div class="pub-title">Strengthening mental health system governance in six low-and middle-income countries in Africa and South Asia: challenges, needs and potential strategies</div>
+              <div class="pub-meta"><span class="journal">Health policy and planning</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2017</span>
+            <span>
+              <div class="pub-title">Health systems context(s) for integrating mental health into primary health care in six Emerald countries: a situation analysis</div>
+              <div class="pub-meta"><span class="journal">International journal of mental health systems</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2016</span>
+            <span>
+              <div class="pub-title">Information systems for mental health in six low and middle income countries: cross country situation analysis</div>
+              <div class="pub-meta"><span class="journal">International Journal of Mental Health Systems</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2016</span>
+            <span>
+              <div class="pub-title">Challenges and Opportunities for Integrating Mental Health Information in Health Management Information Systems</div>
+              <div class="pub-meta"><span class="journal">Indian Journal of Psychiatry</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2016</span>
+            <span>
+              <div class="pub-title">Service user involvement for mental health system strengthening in India: a qualitative study</div>
+              <div class="pub-meta"><span class="journal">BMC psychiatry</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2016</span>
+            <span>
+              <div class="pub-title">Mental health plans in five low-and middle-income countries: PRogramme for Improving Mental health carE (PRIME)</div>
+              <div class="pub-meta"><span class="journal">BJPsych International</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2016</span>
+            <span>
+              <div class="pub-title">Indicators for routine monitoring of effective mental healthcare coverage in low-and middle-income settings: a Delphi study</div>
+              <div class="pub-meta"><span class="journal">Health policy and planning</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2016</span>
+            <span>
+              <div class="pub-title">Key influences in the design and implementation of mental health information systems in Ghana and South Africa</div>
+              <div class="pub-meta"><span class="journal">Global Mental Health</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2016</span>
+            <span>
+              <div class="pub-title">Development and piloting of a plan for integrating mental health in primary care in Sehore district, Madhya Pradesh, India</div>
+              <div class="pub-meta"><span class="journal">The British journal of psychiatry</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2015</span>
+            <span>
+              <div class="pub-title">Making CMAM relevant in India: the letter and the spirit</div>
+              <div class="pub-meta"><span class="journal">The American journal of clinical nutrition</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en" class="pub-item" target="_blank" rel="noopener">
+            <span class="pub-year">2014</span>
+            <span>
+              <div class="pub-title">Can nutrition rehabilitation centers address severe malnutrition in India?</div>
+              <div class="pub-meta"><span class="journal">Indian pediatrics</span></div>
+            </span>
+            <span class="pub-arrow">↗</span>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 Shalini Ahuja. Built with care
+</footer>
+
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p>This site uses cookies to understand visitor traffic via Google Analytics. You can accept or decline.</p>
+  <div class="cookie-banner-actions">
+    <button id="cookieDecline" class="btn btn-ghost">Decline</button>
+    <button id="cookieAccept" class="btn btn-primary">Accept</button>
+  </div>
+</div>
+
+<script>
+  // mobile nav toggle
+  const toggle = document.getElementById('navtoggle');
+  const links = document.getElementById('navlinks');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // cookie consent banner
+  const cookieBanner = document.getElementById('cookieBanner');
+  const consent = localStorage.getItem('cookie_consent');
+  if (consent === 'accepted') {
+    loadAnalytics();
+  } else if (consent !== 'declined') {
+    cookieBanner.classList.add('show');
+  }
+  document.getElementById('cookieAccept').addEventListener('click', () => {
+    localStorage.setItem('cookie_consent', 'accepted');
+    cookieBanner.classList.remove('show');
+    loadAnalytics();
+  });
+  document.getElementById('cookieDecline').addEventListener('click', () => {
+    localStorage.setItem('cookie_consent', 'declined');
+    cookieBanner.classList.remove('show');
+  });
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+</body>
+</html>
