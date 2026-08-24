@@ -239,6 +239,13 @@
   .media-meta{
     display:flex; flex-direction:column; gap:8px;
   }
+  .media-thumb{
+    width:100%;
+    aspect-ratio:1;
+    object-fit:cover;
+    border-radius:4px;
+    display:block;
+  }
   .media-tag{
     display:inline-block;
     font-size:0.7rem;
@@ -254,6 +261,15 @@
   .media-tag.tag-news{color:#8a4420; background:rgba(180,98,46,0.14);}
   .media-tag.tag-blog{color:var(--thread-deep); background:rgba(91,122,108,0.14);}
   .media-tag.tag-video{color:#2a5a8a; background:rgba(59,123,214,0.14);}
+  .media-tag.tag-podcast{color:#6a3f8f; background:rgba(138,79,191,0.14);}
+  .media-subhead{
+    font-family:'Fraunces', Georgia, serif;
+    font-size:1rem;
+    font-weight:600;
+    color:var(--thread-deep);
+    letter-spacing:0.02em;
+    padding:22px 0 6px;
+  }
   .media-date{
     font-family:'Fraunces', Georgia, serif;
     color:var(--ink-soft);
@@ -286,6 +302,7 @@
   @media (max-width:720px){
     .media-item{grid-template-columns:1fr; gap:8px;}
     .media-arrow{display:none;}
+    .media-thumb{max-width:160px;}
   }
 
   footer{
@@ -407,10 +424,26 @@
         <button data-filter="news">News</button>
         <button data-filter="blog">Blogs</button>
         <button data-filter="video">Videos</button>
+        <button data-filter="podcast">Podcasts</button>
       </div>
 
       <ul class="media-list" id="mediaList">
         <!-- NEWS -->
+        <li>
+          <a href="https://www.ufs.ac.za/templates/news-archive-item/campus-news/2024/november/using-implementation-science-to-address-quadruple-burden-of-disease-in-sa" class="media-item" data-type="news" target="_blank" rel="noopener">
+            <span class="media-meta">
+              <img src="media-images/ufs-implementation-science.jpg" alt="Dr Shalini Ahuja with the project's principal investigators at the UFS implementation science workshop" class="media-thumb">
+              <span class="media-tag tag-news">News</span>
+              <span class="media-date">2024</span>
+            </span>
+            <span>
+              <div class="media-title">Using implementation science to address quadruple burden of disease in SA</div>
+              <div class="media-desc">Coverage of a capacity-building workshop on implementation science held by the University of the Free State and Central University of Technology, which I facilitated as an international expert in the field.</div>
+              <span class="media-source">University of the Free State</span>
+            </span>
+            <span class="media-arrow">↗</span>
+          </a>
+        </li>
         <li>
           <a href="https://indianexpress.com/article/opinion/covid-19-pandemic-mental-health-issues-7246829/" class="media-item" data-type="news" target="_blank" rel="noopener">
             <span class="media-meta">
@@ -421,6 +454,21 @@
               <div class="media-title">Mental health stigma: A global scourge</div>
               <div class="media-desc">With Covid exposing long-simmering mental health issues, it has become easier to talk about them. But destigmatisation still has a long way to go.</div>
               <span class="media-source">The Indian Express</span>
+            </span>
+            <span class="media-arrow">↗</span>
+          </a>
+        </li>
+        <!-- PODCASTS -->
+        <li class="media-subhead" data-type="podcast">Podcasts</li>
+        <li>
+          <a href="https://rapidsequence.podbean.com/e/association-between-multimorbidity-and-postoperative-mortality-in-patients-undergoing-major-surgery/" class="media-item" data-type="podcast" target="_blank" rel="noopener">
+            <span class="media-meta">
+              <span class="media-tag tag-podcast">Podcast</span>
+            </span>
+            <span>
+              <div class="media-title">Multimorbidity and perioperative care</div>
+              <div class="media-desc">I delivered a podcast on multimorbidity and perioperative care for the Association of Anaesthesia journal, extending reach to clinical audiences beyond academic readership.</div>
+              <span class="media-source">Association of Anaesthesia — Rapid Sequence podcast</span>
             </span>
             <span class="media-arrow">↗</span>
           </a>
@@ -470,10 +518,11 @@
       const filter = btn.dataset.filter;
       let visibleCount = 0;
       items.forEach(li => {
-        const type = li.querySelector('.media-item').dataset.type;
+        const mediaEl = li.querySelector('.media-item');
+        const type = mediaEl ? mediaEl.dataset.type : li.dataset.type;
         const show = filter === 'all' || type === filter;
         li.style.display = show ? '' : 'none';
-        if (show) visibleCount++;
+        if (show && mediaEl) visibleCount++;
       });
       emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
     });
