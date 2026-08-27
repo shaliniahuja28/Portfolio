@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shalini Ahuja: Implementation Science &amp; Health Systems</title>
+<meta name="description" content="Dr. Shalini Ahuja, Senior Lecturer in Rehabilitation Systems and Implementation Science, King's College London, working across implementation science, health equity, and mixed methods.">
+
+<!-- Google tag (gtag.js) — only loaded after cookie consent is given, see script at bottom of page -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  function loadAnalytics(){
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-6V4Q93ET3P';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-6V4Q93ET3P');
+  }
+</script>
+<style>
+  :root{
+    --paper:#F7F5F0;
+    --ink:#16241F;
+    --ink-soft:#41544C;
+    --line:#CFD6CD;
+    --thread:#5B7A6C;
+    --thread-deep:#2E4A3E;
+    --clay:#B4622E;
+    --max:1180px;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+  }
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', 'Segoe UI', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+    overflow-x:hidden;
+  }
+
+  @font-face{
+    font-family:'Fraunces Fallback';
+    src:local('Georgia');
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Fraunces', Georgia, 'Times New Roman', serif;
+    font-optical-sizing:auto;
+    letter-spacing:-0.01em;
+    color:var(--thread-deep);
+  }
+
+  a{color:inherit;}
+
+  ::selection{background:var(--thread); color:var(--paper);}
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--clay);
+    outline-offset:3px;
+    border-radius:2px;
+  }
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 32px;}
+
+  /* ---------- NAV ---------- */
+  header.site{
+    position:sticky; top:0; z-index:50;
+    background:rgba(247,245,240,0.88);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    min-height:72px;
+    padding-top:10px; padding-bottom:10px;
+  }
+  .brand{
+    font-family:'Fraunces', Georgia, serif;
+    font-size:1.15rem;
+    font-weight:600;
+    color:var(--thread-deep);
+    text-decoration:none;
+    letter-spacing:0.01em;
+    display:inline-flex;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:0 4px;
+  }
+  .brand span{color:var(--clay);}
+  .brand-name{
+    font-size:1.75rem;
+    font-weight:700;
+    color:var(--thread-deep);
+  }
+  .brand-degrees{
+    font-size:0.98rem;
+    font-weight:600;
+    color:var(--ink-soft);
+  }
+  .degree{font-weight:700;}
+  .degree:nth-of-type(1){color:#e0473e;}
+  .degree:nth-of-type(2){color:#e8942c;}
+  .degree:nth-of-type(3){color:#2f9e5c;}
+  .degree:nth-of-type(4){color:#3b7bd6;}
+  .navlinks{display:flex; gap:2.2rem; list-style:none;}
+  .navlinks a{
+    text-decoration:none;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    position:relative;
+    padding-bottom:4px;
+  }
+  .navlinks a::after{
+    content:'';
+    position:absolute; left:0; bottom:0;
+    width:0; height:1.5px;
+    background:var(--clay);
+    transition:width .25s ease;
+  }
+  .navlinks a:hover::after, .navlinks a:focus-visible::after{width:100%;}
+  .navtoggle{display:none; background:none; border:none; cursor:pointer; padding:8px;}
+  .navtoggle span, .navtoggle span::before, .navtoggle span::after{
+    content:''; display:block; width:22px; height:2px; background:var(--thread-deep);
+    position:relative; transition:.2s;
+  }
+  .navtoggle span::before{position:absolute; top:-7px;}
+  .navtoggle span::after{position:absolute; top:7px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:104px 0 88px;
+    position:relative;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+    align-items:start;
+  }
+  .hero-media{
+    position:relative;
+    margin-top:52px;
+  }
+  .hero-media img{
+    display:block;
+    width:100%;
+    height:auto;
+    border-radius:2px;
+  }
+  .hero-media-caption{
+    display:flex;
+    justify-content:space-between;
+    margin-top:16px;
+    font-size:0.78rem;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:600;
+  }
+  .hero-media-caption span:nth-child(2){
+    text-align:center;
+  }
+  .hero-media-caption span:nth-child(3){
+    text-align:right;
+    color:var(--clay);
+  }
+  @media (max-width:900px){
+    .hero .wrap{
+      grid-template-columns:1fr;
+    }
+    .hero-media{
+      order:-1;
+      margin-top:0;
+    }
+  }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.78rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--thread);
+    margin-bottom:22px;
+    font-weight:600;
+  }
+  .eyebrow::before{
+    content:''; width:24px; height:1px; background:var(--thread);
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5.4vw, 4.1rem);
+    line-height:1.06;
+    max-width:15ch;
+    font-weight:500;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--clay);
+  }
+  .hero-sub{
+    margin-top:26px;
+    max-width:640px;
+    font-size:1.12rem;
+    color:var(--ink-soft);
+  }
+  .hero-note{
+    margin-top:18px;
+    max-width:600px;
+    font-size:0.98rem;
+    color:var(--ink-soft);
+    border-left:2px solid var(--line);
+    padding-left:18px;
+  }
+  .hero-cta{
+    display:flex; gap:16px; margin-top:40px; flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    padding:13px 26px;
+    border-radius:2px;
+    text-decoration:none;
+    font-size:0.94rem;
+    font-weight:600;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+  .btn-primary{
+    background:var(--thread-deep);
+    color:var(--paper);
+  }
+  .btn-primary:hover{
+    background:var(--thread);
+    transform:translateY(-2px);
+  }
+  .btn-ghost{
+    border:1px solid var(--ink);
+    color:var(--ink);
+  }
+  .btn-ghost:hover{
+    background:var(--ink);
+    color:var(--paper);
+    transform:translateY(-2px);
+  }
+
+  /* Signature: the evidence-to-outcome thread */
+  .thread{
+    margin-top:88px;
+    position:relative;
+    height:64px;
+  }
+  .thread svg{width:100%; height:100%; display:block; overflow:visible;}
+  .thread-path{
+    fill:none; stroke:var(--thread); stroke-width:1.4;
+    stroke-dasharray:6 480;
+    animation:draw 2.6s ease-out forwards;
+  }
+  @keyframes draw{
+    to{stroke-dashoffset:0; stroke-dasharray:1400 0;}
+  }
+  .thread-labels{
+    display:flex; justify-content:space-between;
+    margin-top:10px;
+    font-size:0.74rem;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--ink-soft);
+  }
+  .thread-labels span{position:relative;}
+  .thread-labels span.active{color:var(--clay); font-weight:700;}
+
+  /* ---------- SECTION shared ---------- */
+  section{padding:96px 0;}
+  .section-head{
+    display:flex; align-items:baseline; justify-content:space-between;
+    gap:24px; margin-bottom:52px; flex-wrap:wrap;
+    border-bottom:1px solid var(--line);
+    padding-bottom:22px;
+  }
+  .section-num{
+    font-family:'Fraunces', Georgia, serif; font-size:0.85rem; color:var(--thread);
+    letter-spacing:0.08em;
+  }
+  .section-head h2{
+    font-size:clamp(1.7rem, 3vw, 2.3rem);
+    font-weight:500;
+  }
+  .section-head p{
+    max-width:340px; font-size:0.95rem; color:var(--ink-soft); text-align:right;
+  }
+  @media (max-width:720px){ .section-head p{text-align:left; max-width:100%;} }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{
+    display:grid; grid-template-columns:1.5fr 1fr; gap:64px;
+  }
+  .about-grid p{
+    font-size:1.06rem; color:var(--ink-soft); margin-bottom:20px; max-width:60ch;
+  }
+  .about-grid p:first-child::first-letter{
+    font-family:'Fraunces', Georgia, serif;
+    font-size:3rem; color:var(--thread-deep); float:left; line-height:0.8;
+    margin-right:10px; margin-top:8px; font-weight:600;
+  }
+  .facts{
+    border-left:1px solid var(--line);
+    padding-left:36px;
+    display:flex; flex-direction:column; gap:26px;
+    align-self:start;
+  }
+  .headshot{
+    width:180px; height:180px;
+    border-radius:6px;
+    object-fit:cover;
+    border:1px solid var(--line);
+    margin-bottom:8px;
+  }
+  .fact dt{
+    font-size:0.74rem; text-transform:uppercase; letter-spacing:0.1em;
+    color:var(--thread); margin-bottom:6px;
+  }
+  .fact dd{
+    font-family:'Fraunces', Georgia, serif;
+    font-size:1.15rem; color:var(--ink);
+  }
+  @media (max-width:860px){
+    .about-grid{grid-template-columns:1fr;}
+    .facts{border-left:none; border-top:1px solid var(--line); padding-left:0; padding-top:28px; flex-direction:row; flex-wrap:wrap;}
+    .fact{min-width:150px;}
+  }
+
+  /* ---------- FOCUS ---------- */
+  .focus-bg{background:var(--thread-deep); color:var(--paper);}
+  .focus-bg .section-num{color:#9FC2AE;}
+  .focus-bg .section-head{border-bottom-color:rgba(247,245,240,0.18);}
+  .focus-bg .section-head h2{color:var(--paper);}
+  .focus-bg .section-head p{color:#C7D6CC;}
+  .focus-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:rgba(247,245,240,0.16);
+    border:1px solid rgba(247,245,240,0.16);
+  }
+  .focus-card{
+    background:var(--thread-deep);
+    padding:34px 28px;
+    transition:background .25s ease;
+  }
+  .focus-card:hover{background:#25392F;}
+  .focus-tag{
+    font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;
+    color:#9FC2AE; display:block; margin-bottom:18px;
+  }
+  .focus-card h3{
+    color:var(--paper); font-size:1.15rem; margin-bottom:12px; font-weight:500;
+  }
+  .focus-card p{color:#C7D6CC; font-size:0.92rem;}
+  @media (max-width:920px){ .focus-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .focus-grid{grid-template-columns:1fr;} }
+
+  /* ---------- WORK ---------- */
+  .work-list{list-style:none;}
+  .work-item{
+    display:grid; grid-template-columns:110px 1fr auto;
+    align-items:center;
+    gap:28px;
+    padding:28px 0;
+    border-bottom:1px solid var(--line);
+    text-decoration:none;
+    color:var(--ink);
+    transition:padding-left .25s ease, background .25s ease;
+  }
+  .work-item:hover, .work-item:focus-visible{
+    padding-left:14px;
+    background:rgba(91,122,108,0.06);
+  }
+  .work-year{
+    font-family:'Fraunces', Georgia, serif; color:var(--thread); font-size:0.95rem;
+  }
+  .work-title{
+    font-family:'Fraunces', Georgia, serif;
+    font-size:1.28rem; font-weight:500; margin-bottom:6px; color:var(--thread-deep);
+  }
+  .work-desc{color:var(--ink-soft); font-size:0.96rem; max-width:56ch;}
+  .work-arrow{
+    font-size:1.3rem; color:var(--clay); transition:transform .25s ease;
+  }
+  .work-item:hover .work-arrow{transform:translate(4px,-4px);}
+  @media (max-width:720px){
+    .work-item{grid-template-columns:1fr; gap:6px;}
+    .work-arrow{display:none;}
+  }
+
+  /* ---------- COACHING ---------- */
+  .coaching-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:28px;
+  }
+  .coaching-card{
+    border:1px solid var(--line);
+    padding:38px 34px;
+    background:#FBFAF7;
+    transition:border-color .25s ease, transform .25s ease;
+  }
+  .coaching-card:hover{
+    border-color:var(--thread);
+    transform:translateY(-3px);
+  }
+  .coaching-tag{
+    font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--thread); display:block; margin-bottom:16px;
+  }
+  .coaching-card h3{
+    font-size:1.35rem; margin-bottom:14px; font-weight:500;
+  }
+  .coaching-card p{
+    color:var(--ink-soft); font-size:0.97rem; margin-bottom:26px;
+  }
+  @media (max-width:720px){ .coaching-grid{grid-template-columns:1fr;} }
+
+  .testimonial{
+    margin-top:40px;
+    padding:32px 36px;
+    border-left:3px solid var(--clay);
+    background:rgba(0,0,0,0.02);
+    border-radius:2px;
+  }
+  .testimonial p{
+    font-family:'Fraunces', Georgia, serif;
+    font-style:italic;
+    font-size:1.08rem;
+    line-height:1.6;
+    color:var(--ink);
+    max-width:640px;
+  }
+  .testimonial cite{
+    display:block;
+    margin-top:16px;
+    font-style:normal;
+    font-size:0.85rem;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:600;
+  }
+
+  .phd-intro{
+    max-width:640px;
+    font-size:1.02rem;
+    color:var(--ink-soft);
+    margin-bottom:36px;
+  }
+  .phd-list{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:18px;
+    margin-bottom:40px;
+  }
+  .phd-item{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    padding:20px 22px;
+    border:1px solid var(--line);
+    border-radius:2px;
+  }
+  .phd-item-num{
+    font-family:'Fraunces', Georgia, serif;
+    font-size:1.3rem;
+    color:var(--clay);
+    line-height:1;
+  }
+  .phd-item p{
+    font-size:0.98rem;
+    color:var(--ink);
+  }
+  @media (max-width:720px){ .phd-list{grid-template-columns:1fr;} }
+
+  /* ---------- CONTACT ---------- */
+  .contact-bg{
+    background:var(--ink);
+    color:var(--paper);
+    padding:108px 0 84px;
+    position:relative;
+    overflow:hidden;
+  }
+  .contact-bg h2{color:var(--paper); font-size:clamp(2rem,4vw,3rem); max-width:16ch; font-weight:500;}
+  .contact-bg p.lead{color:#B7C4BC; font-size:1.05rem; max-width:48ch; margin-top:18px;}
+  .contact-links{
+    margin-top:44px; display:flex; gap:20px; flex-wrap:wrap;
+  }
+  .contact-links a{
+    text-decoration:none;
+    color:var(--paper);
+    border:1px solid rgba(247,245,240,0.3);
+    padding:14px 24px;
+    border-radius:2px;
+    font-size:0.94rem;
+    transition:.2s;
+  }
+  .contact-links a:hover{
+    background:var(--paper); color:var(--ink);
+    border-color:var(--paper);
+  }
+
+  footer{
+    background:var(--ink); color:#8AA095;
+    text-align:center; font-size:0.82rem;
+    padding:24px 0;
+    border-top:1px solid rgba(247,245,240,0.1);
+  }
+
+  .cookie-banner{
+    position:fixed;
+    left:20px; right:20px; bottom:20px;
+    max-width:640px;
+    margin:0 auto;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:4px;
+    box-shadow:0 12px 32px rgba(0,0,0,0.14);
+    padding:20px 24px;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:16px 20px;
+    justify-content:space-between;
+    z-index:200;
+    transform:translateY(120%);
+    opacity:0;
+    transition:transform .4s ease, opacity .4s ease;
+    pointer-events:none;
+  }
+  .cookie-banner.show{
+    transform:translateY(0);
+    opacity:1;
+    pointer-events:auto;
+  }
+  .cookie-banner p{
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    flex:1 1 260px;
+    margin:0;
+  }
+  .cookie-banner-actions{
+    display:flex; gap:10px; flex-shrink:0;
+  }
+  .cookie-banner .btn{
+    padding:10px 18px;
+    font-size:0.86rem;
+  }
+  @media (max-width:480px){
+    .cookie-banner{ left:12px; right:12px; bottom:12px; padding:18px; }
+  }
+
+  /* reveal on scroll */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:none;}
+
+  @media (max-width:760px){
+    .navlinks{
+      position:fixed; inset:72px 0 auto 0;
+      background:var(--paper);
+      flex-direction:column; gap:0;
+      border-bottom:1px solid var(--line);
+      transform:translateY(-110%);
+      transition:transform .25s ease;
+    }
+    .navlinks.open{transform:translateY(0);}
+    .navlinks li{width:100%; border-top:1px solid var(--line);}
+    .navlinks a{display:block; padding:18px 32px;}
+    .navtoggle{display:block;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <nav class="wrap">
+    <a href="#" class="brand"><span class="brand-name">Shalini Ahuja</span><span class="brand-degrees">, <span class="degree">PhD</span>, <span class="degree">FHEA</span>, <span class="degree">MA</span>, <span class="degree">BPT</span></span></a>
+    <ul class="navlinks" id="navlinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#focus">Focus</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="#coaching">Coaching</a></li>
+      <li><a href="#phd">PhD</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="navtoggle" id="navtoggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navlinks">
+      <span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+      <div class="eyebrow">Implementation Science &amp; Health Systems</div>
+      <h1>Turning evidence into <em>everyday practice.</em></h1>
+      <p class="hero-sub">Dr. Shalini Ahuja, Senior Lecturer in Rehabilitation Systems and Implementation Science, King's College London, working at the point where good evidence meets real health services.</p>
+      <p class="hero-note">Most research never reaches the people it's meant for. My work is about closing that gap, study by study, service by service.</p>
+      <div class="hero-cta">
+        <a href="#work" class="btn btn-primary">See the work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+      </div>
+
+      <div class="hero-media">
+        <img src="evidence-journey.jpg" alt="Origami boats transforming into birds in flight, symbolising the journey from evidence to adaptation to delivery">
+        <div class="hero-media-caption">
+          <span>Evidence</span>
+          <span>Adaptation</span>
+          <span>Delivery</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-num">About</div>
+          <h2>A short version of the story</h2>
+        </div>
+        <p>Clinically trained, systems-focused. Now working across academia and practice.</p>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <p>I trained as a physical therapist, with clinical experience in rehabilitation services. My Master's and PhD, at the University of Leeds and King's College London, took me into hospital administration, health management planning and policy, and mental health services research. Along the way, I've worked across mental health systems, antimicrobial resistance, and maternity and neonatal care in England, India, South Africa, Ghana, Nepal, Ethiopia, and Uganda.</p>
+          <p>That path shapes how I think: I'm less interested in evidence for its own sake, and more in whether it survives contact with a real, understaffed, overstretched service.</p>
+          <p>My work sits across implementation science, health equity, and mixed methods, using frameworks like CFIR, NPT, realist methods, and Proctor's taxonomy to design studies that don't just prove something works, but explain why, for whom, and under what conditions.</p>
+          <p>Alongside research, I teach, mentor, and coach students, and supervise the next generation of people doing this work, leading modules across several MSc programmes and supervising PhD students, because the field grows one well-trained researcher at a time.</p>
+        </div>
+        <dl class="facts reveal">
+          <img src="profile.jpg" alt="Shalini Ahuja" class="headshot">
+          <div class="fact"><dt>Role</dt><dd>Senior Lecturer, King's College London</dd></div>
+          <div class="fact"><dt>Faculty</dt><dd>Nursing, Midwifery &amp; Palliative Care</dd></div>
+          <div class="fact"><dt>Based in</dt><dd>London, UK</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="focus" class="focus-bg">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-num">Focus</div>
+          <h2>Where the work lives</h2>
+        </div>
+        <p>Four lenses I return to, often in combination, on any given project.</p>
+      </div>
+      <div class="focus-grid reveal">
+        <div class="focus-card">
+          <span class="focus-tag">01. Frameworks</span>
+          <h3>Implementation science</h3>
+          <p>Using CFIR, NPT, and Proctor's taxonomy to understand why interventions succeed or stall in practice.</p>
+        </div>
+        <div class="focus-card">
+          <span class="focus-tag">02. Access</span>
+          <h3>Health equity</h3>
+          <p>Designing research and services so that benefit doesn't quietly concentrate among those already best served.</p>
+        </div>
+        <div class="focus-card">
+          <span class="focus-tag">03. Method</span>
+          <h3>Mixed methods analysis</h3>
+          <p>Including surveys, meta-analysis, in-depth interviews, and framework analysis to surface what any single method misses.</p>
+        </div>
+        <div class="focus-card">
+          <span class="focus-tag">04. Scale</span>
+          <h3>Rehabilitation systems</h3>
+          <p>Working with services and policymakers to move findings from a single study into standard practice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-num">Work</div>
+          <h2>Selected work</h2>
+        </div>
+        <p>A few projects worth a closer look.</p>
+      </div>
+      <ul class="work-list reveal">
+        <li>
+          <a href="https://www.kcl.ac.uk/research/d-stress-study" class="work-item" target="_blank" rel="noopener">
+            <span class="work-year">NIHR</span>
+            <span>
+              <div class="work-title">D-Stress Programme</div>
+              <div class="work-desc">Research programme on diabetes distress, King's College London.</div>
+            </span>
+            <span class="work-arrow">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.kcl.ac.uk/research/inklude" class="work-item" target="_blank" rel="noopener">
+            <span class="work-year">Wellcome Trust</span>
+            <span>
+              <div class="work-title">INKLUDE</div>
+              <div class="work-desc">Research programme, King's College London.</div>
+            </span>
+            <span class="work-arrow">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.kcl.ac.uk/research/core-study" class="work-item" target="_blank" rel="noopener">
+            <span class="work-year">NIHR</span>
+            <span>
+              <div class="work-title">CORE Programme</div>
+              <div class="work-desc">Research programme, King's College London.</div>
+            </span>
+            <span class="work-arrow">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://arc-sl.nihr.ac.uk/research-and-implementation/our-research-areas/mental-health-implementation-network" class="work-item" target="_blank" rel="noopener">
+            <span class="work-year">NIHR ARC South London</span>
+            <span>
+              <div class="work-title">Mental Health Implementation Network</div>
+              <div class="work-desc">Implementation science network, NIHR Applied Research Collaboration South London.</div>
+            </span>
+            <span class="work-arrow">↗</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-num">Completed Projects</div>
+          <h2>Completed projects</h2>
+        </div>
+        <p>Projects I've worked on that have now concluded.</p>
+      </div>
+      <ul class="work-list reveal">
+        <li>
+          <a href="https://cordis.europa.eu/project/id/305968/reporting" class="work-item" target="_blank" rel="noopener">
+            <span class="work-year">EU</span>
+            <span>
+              <div class="work-title">EMERALD</div>
+              <div class="work-desc">Emerging mental health systems in low- and middle-income countries.</div>
+            </span>
+            <span class="work-arrow">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.imperial.ac.uk/arc/aspires/" class="work-item" target="_blank" rel="noopener">
+            <span class="work-year">ESRC</span>
+            <span>
+              <div class="work-title">ASPIRES</div>
+              <div class="work-desc">Antibiotic use across Surgical Pathways: Investigating, Redesigning and Evaluating Systems.</div>
+            </span>
+            <span class="work-arrow">↗</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.cardiff.ac.uk/centre-for-trials-research/research/studies-and-trials/view/protect" class="work-item" target="_blank" rel="noopener">
+            <span class="work-year">NIHR</span>
+            <span>
+              <div class="work-title">PROTECT</div>
+              <div class="work-desc">Platform Randomised evaluation of clinical Outcomes using novel TEChnologies to optimise antimicrobial Therapy.</div>
+            </span>
+            <span class="work-arrow">↗</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="coaching">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-num">Coaching</div>
+          <h2>My coaching services</h2>
+        </div>
+        <p>One-to-one coaching alongside my research and teaching work.</p>
+      </div>
+      <div class="coaching-grid reveal">
+        <div class="coaching-card">
+          <span class="coaching-tag">Career coaching</span>
+          <h3>Career Coaching</h3>
+          <p>Support for researchers, clinicians, and early-career academics navigating career transitions, grant strategy, and professional development.</p>
+          <a href="mailto:crescendoconsultinggroup.uk@gmail.com?subject=Career%20Coaching%20Enquiry" class="btn btn-primary">Book via email</a>
+        </div>
+        <div class="coaching-card">
+          <span class="coaching-tag">Wellness coaching</span>
+          <h3>Wellness Coaching</h3>
+          <p>One-to-one coaching focused on sustainable wellbeing, balance, and resilience alongside demanding academic or clinical careers.</p>
+          <a href="mailto:crescendoconsultinggroup.uk@gmail.com?subject=Wellness%20Coaching%20Enquiry" class="btn btn-primary">Book via email</a>
+        </div>
+      </div>
+
+      <div class="testimonial reveal">
+        <p>"I just wanted to thank you for our meeting that day and the tips you gave me, because I finally got my first (although temporary) role as a Research Assistant through King's, and I wanted to share the same with you!"</p>
+        <cite>Mentee, Research Assistant</cite>
+      </div>
+    </div>
+  </section>
+
+  <section id="phd">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <div class="section-num">PhD Enquiries</div>
+          <h2>Thinking about a PhD?</h2>
+        </div>
+        <p>I'm always happy to talk to prospective students.</p>
+      </div>
+      <p class="phd-intro reveal">I'm always ready to have a chat with prospective PhD students thinking of working in these areas. If any of the below resonates with a project you're developing, get in touch.</p>
+      <div class="phd-list reveal">
+        <div class="phd-item">
+          <span class="phd-item-num">01</span>
+          <p>Advancing implementation science research methods.</p>
+        </div>
+        <div class="phd-item">
+          <span class="phd-item-num">02</span>
+          <p>Expanding frailty assessment and management.</p>
+        </div>
+        <div class="phd-item">
+          <span class="phd-item-num">03</span>
+          <p>Strengthening rehabilitation systems in LMICs.</p>
+        </div>
+        <div class="phd-item">
+          <span class="phd-item-num">04</span>
+          <p>Integrating mental and physical health services.</p>
+        </div>
+      </div>
+      <a href="mailto:shalini.ahuja@kcl.ac.uk?subject=PhD%20Enquiry" class="btn btn-primary reveal">Get in touch about a PhD</a>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-bg">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="section-num" style="color:#9FC2AE;">Contact</div>
+        <h2>Get in touch</h2>
+        <p class="lead">Open to collaboration, speaking, and PhD enquiries.</p>
+        <div class="contact-links">
+          <a href="#" class="reveal-email" data-user="shalini.ahuja" data-domain="kcl.ac.uk">Email</a>
+          <a href="https://www.linkedin.com/in/dr-shalini-ahuja-phd-52589515/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=JL719OEAAAAJ&hl=en&inst=15159612047463182172" target="_blank" rel="noopener">Google Scholar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © 2026 Shalini Ahuja. Built with care
+</footer>
+
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p>This site uses cookies to understand visitor traffic via Google Analytics. You can accept or decline.</p>
+  <div class="cookie-banner-actions">
+    <button id="cookieDecline" class="btn btn-ghost">Decline</button>
+    <button id="cookieAccept" class="btn btn-primary">Accept</button>
+  </div>
+</div>
+
+<script>
+  // mobile nav toggle
+  const toggle = document.getElementById('navtoggle');
+  const links = document.getElementById('navlinks');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // click-to-reveal email
+  document.querySelectorAll('.reveal-email').forEach(link => {
+    link.addEventListener('click', function (e) {
+      if (this.dataset.revealed !== 'true') {
+        e.preventDefault();
+        const address = this.dataset.user + '@' + this.dataset.domain;
+        this.textContent = address;
+        this.href = 'mailto:' + address;
+        this.dataset.revealed = 'true';
+      }
+    });
+  });
+
+  // cookie consent banner
+  const cookieBanner = document.getElementById('cookieBanner');
+  const consent = localStorage.getItem('cookie_consent');
+  if (consent === 'accepted') {
+    loadAnalytics();
+  } else if (consent !== 'declined') {
+    cookieBanner.classList.add('show');
+  }
+  document.getElementById('cookieAccept').addEventListener('click', () => {
+    localStorage.setItem('cookie_consent', 'accepted');
+    cookieBanner.classList.remove('show');
+    loadAnalytics();
+  });
+  document.getElementById('cookieDecline').addEventListener('click', () => {
+    localStorage.setItem('cookie_consent', 'declined');
+    cookieBanner.classList.remove('show');
+  });
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+</body>
+</html>
